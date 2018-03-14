@@ -9,15 +9,15 @@ def generate_connected_graph(V):
 	visitedSet = set()
 	vertices = set()
 	edges = set()
-	# generate the set of names for the vertices
+
 	for i in range(V):
 		initialSet.add(str(i))
 		vertices.add(str(i))
-	# set the intial vertex to be connected
+
 	curVertex = random.sample(initialSet, 1).pop()
 	initialSet.remove(curVertex)
 	visitedSet.add(curVertex)
-	# loop through all the vertices, connecting them randomly
+
 	while initialSet:
 		adjVertex = random.sample(initialSet, 1).pop()
 		edge = (random.randint(WEIGHT_MIN,WEIGHT_MAX), curVertex, adjVertex)
